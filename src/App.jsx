@@ -1,21 +1,8 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function App() {
   const [text, setText] = useState("");
   const [todos, setTodos] = useState([]);
-
-  async function fetchTodos() {
-    const response = await axios.get("http://191.101.14.91:4040/todos");
-
-    console.log(response.data);
-
-    setTodos(response.data)
-  }
-
-  useEffect(() => {
-    fetchTodos();
-  }, []);
 
   // console.log("current todos", todos);
 
